@@ -886,7 +886,7 @@
             font-size: 14px;
         }
 
-        /* Contact Section */
+        /* Contact Section - محسّن للاستجابة */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1043,16 +1043,17 @@
             margin-bottom: 8px;
             color: var(--text-primary);
             font-weight: 500;
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
         .form-control {
             width: 100%;
-            padding: 14px;
+            padding: clamp(12px, 3vw, 16px);
             background: rgba(255, 255, 255, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 10px;
             color: var(--text-primary);
-            font-size: 16px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             box-shadow: 0 0 10px rgba(78, 188, 178, 0.1);
@@ -1066,7 +1067,7 @@
         }
 
         textarea.form-control {
-            min-height: 150px;
+            min-height: clamp(120px, 25vw, 150px);
             resize: vertical;
         }
 
@@ -1135,6 +1136,85 @@
             border-top: 1px solid rgba(255, 255, 255, 0.4);
         }
 
+        /* استعلامات وسائط إضافية للشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-info {
+                order: 2;
+            }
+            
+            .contact-form {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: clamp(20px, 5vw, 30px);
+            }
+            
+            .form-group {
+                margin-bottom: clamp(15px, 3vw, 20px);
+            }
+            
+            .contact-item {
+                padding: clamp(15px, 3vw, 20px);
+            }
+            
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .contact-text h4 {
+                font-size: 1.1rem;
+            }
+            
+            .contact-text p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 20px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .contact-text h4 {
+                font-size: 1rem;
+            }
+            
+            .contact-text p {
+                font-size: 0.85rem;
+            }
+            
+            .form-control {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            textarea.form-control {
+                min-height: 100px;
+            }
+        }
+
         /* Responsive Design - محسّن */
         @media (min-width: 1200px) {
             .hero-content {
@@ -1181,10 +1261,6 @@
             .hero-image-right {
                 width: 35%;
                 right: 5%;
-            }
-            
-            .contact-content {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -1285,6 +1361,10 @@
             }
             
             .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1503,7 +1583,6 @@
         </div>
     </section>
 
-    <!-- باقي الأقسام تبقى كما هي -->
     <!-- Portfolio Section -->
     <section id="portfolio">
         <div class="container">
@@ -1616,6 +1695,104 @@
                         <div class="author-info">
                             <h4>خالد عبدالله</h4>
                             <p>مدير تسويق</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "النتيجة النهائية كانت رائعة وتجاوزت توقعاتي. فريق العمل كان متعاون جداً ومستمع لكل الملاحظات. أنصح الجميع بالتعامل معهم."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">أ</div>
+                        <div class="author-info">
+                            <h4>أحمد محمود</h4>
+                            <p>مالك شركة ناشئة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "السرعة في التسليم مع الحفاظ على الجودة كانت مذهلة. استطاعوا فهم احتياجاتي وتحويلها إلى تصميمات تفوق التوقعات."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ف</div>
+                        <div class="author-info">
+                            <h4>فاطمة حسن</h4>
+                            <p>مديرة تسويق رقمي</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "المهنية والالتزام بالجودة كانا واضحين من البداية. التصميمات كانت مبتكرة وساعدت في زيادة التفاعل مع علامتنا التجارية بشكل ملحوظ."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ي</div>
+                        <div class="author-info">
+                            <h4>ياسمين كمال</h4>
+                            <p>مديرة إبداعية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "تجربة رائعة من البداية للنهاية. فريق العمل استمع لكل متطلباتي وحولها إلى واقع ملموس. الأسعار معقولة والجودة استثنائية."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ع</div>
+                        <div class="author-info">
+                            <h4>عمر سليمان</h4>
+                            <p>صاحب متجر إلكتروني</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 8 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "الاهتمام بالتفاصيل والدقة في التنفيذ كانا مميزين. التصميمات ساعدت في تعزيز هويتنا البصرية وجعلت علامتنا التجارية تبرز بين المنافسين."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ن</div>
+                        <div class="author-info">
+                            <h4>نورا عبدالرحمن</h4>
+                            <p>مديرة علامة تجارية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 9 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "سرعة الاستجابة والدعم الفني المميز بعد التسليم جعلوا التعامل مع AuraVision تجربة لا تنسى. أنصح بهم بشدة لأي شخص يبحث عن جودة واحترافية."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ر</div>
+                        <div class="author-info">
+                            <h4>ريم محمد</h4>
+                            <p>مؤثرة وسائل تواصل</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 10 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "من أفضل التجارب في مجال التصميم. الفهم العميق لاحتياجات العملاء والقدرة على الابتكار جعلوا العمل معهم متعة حقيقية. نتائج مذهلة!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">و</div>
+                        <div class="author-info">
+                            <h4>وليد عبدالعزيز</h4>
+                            <p>مدير مشاريع تقنية</p>
                         </div>
                     </div>
                 </div>
@@ -1844,5 +2021,4 @@
         });
     </script>
 </body>
-
 </html>
